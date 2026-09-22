@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/*
+ * Palette Signal — éditoriale, sombre, accent corail.
+ * Définie en tokens @theme pour être utilisable via les classes Tailwind
+ * (bg-ink, text-fog, border-line, text-accent, ...).
+ */
+@theme {
+  --color-ink: #08080a; /* fond, presque noir */
+  --color-ink-2: #0d0d10; /* second plan */
+  --color-card: #161619; /* anthracite */
+  --color-card-2: #1c1c20; /* anthracite clair / hover */
+  --color-line: #2a2a2f; /* bordures discrètes */
+  --color-bone: #ece7df; /* texte blanc cassé */
+  --color-fog: #9a9aa2; /* gris doux secondaire */
+  --color-fog-2: #6c6c74; /* gris encore plus discret */
+  --color-accent: #ff5a4d; /* rouge / corail */
+  --color-accent-2: #ff7a6b; /* corail clair */
+  --color-accent-ink: #2a0f0c; /* fond corail très sombre */
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Iowan Old Style", "Apple Garamond", Georgia, serif;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-bone);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Scrollbar discrète, raccord avec l'ambiance sombre. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
